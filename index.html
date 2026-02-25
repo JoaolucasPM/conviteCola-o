@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite de Formatura - Dark Edition</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+        body {
+            background-color: #0f0f0f; /* Fundo ultra dark */
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        /* Botão de Abrir Estilo Cyber */
+        #btnAbrir {
+            padding: 18px 35px;
+            font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background-color: transparent;
+            color: #b8860b;
+            border: 2px solid #b8860b;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(184, 134, 11, 0.3);
+            transition: all 0.4s ease;
+            z-index: 10;
+        }
+
+        #btnAbrir:hover {
+            background-color: #b8860b;
+            color: #111;
+            box-shadow: 0 0 30px rgba(184, 134, 11, 0.6);
+        }
+
+        /* Container do Convite */
+        .container-convite {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .card {
+            background-color: #1a1a1a; /* Cinza escuro */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            text-align: center;
+            border: 1px solid #333;
+            position: relative;
+        }
+
+        /* Detalhe dourado no topo */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #b8860b, transparent);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background-color: #252525;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 1px solid #444;
+        }
+
+        h2 { font-size: 1rem; margin: 10px 0; font-weight: 300; color: #ccc; }
+        h2 strong { color: #b8860b; }
+
+        /* Agradecimento IA - Glow Style */
+        .ai-shoutout {
+            line-height: 1.6;
+            color: #aaa;
+            font-style: italic;
+            background: #111;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            font-size: 0.85rem;
+            border: 1px solid #222;
+        }
+
+        .chatgpt-icon {
+            width: 20px;
+            vertical-align: middle;
+            fill: #10a37f; /* Verde original ChatGPT */
+            filter: drop-shadow(0 0 5px rgba(16, 163, 127, 0.5));
+            margin-bottom: 3px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            opacity: 0.9;
+            filter: grayscale(20%);
+            transition: 0.3s;
+        }
+
+        img:hover { opacity: 1; filter: grayscale(0%); }
+
+        .footer { 
+            margin-top: 25px; 
+            font-weight: bold; 
+            color: #b8860b;
+            letter-spacing: 3px;
+        }
+
+        /* Classe para mostrar o convite */
+        .mostrar {
+            display: block !important;
+            opacity: 1 !important;
+            transform: scale(1) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btnAbrir" onclick="abrirConvite()">Decrypt Invitation _</button>
+
+    <div id="convite" class="container-convite">
+        <div class="card">
+            <h1>Você está convidado para minha colação de grau!</h1>
+            
+            <div class="info-box">
+                <h2><strong>Local:</strong> Centro de Convenções do Center Shopping</h2>
+                <h2><strong>Horário:</strong> 16h</h2>
+            </div>
+
+            <div class="ai-shoutout">
+                "Um agradecimento especial ao 
+                <svg class="chatgpt-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5153-4.9066 6.0462 6.0462 0 0 0-3.947-3.129 6.0417 6.0417 0 0 0-5.4347 1.2917 6.0486 6.0486 0 0 0-7.3923 1.3422 6.0524 6.0524 0 0 0-1.4 5.3785 6.0524 6.0524 0 0 0-1.5205 5.1606 6.051 6.051 0 0 0 3.1094 4.582 6.0235 6.0235 0 0 0 1.3254 5.9023 6.0417 6.0417 0 0 0 5.203 1.9477 6.0524 6.0524 0 0 0 4.3886-2.2697 6.0524 6.0524 0 0 0 6.3405-2.2327 6.0551 6.0551 0 0 0 1.2329-5.3813 6.0486 6.0486 0 0 0 2.6501-4.6866c-.0154-.3165-.0309-.633-.0464-.9495ZM12.084 16.3924a3.0242 3.0242 0 0 1-1.4222-.3518L6.7046 13.8906V8.061l3.9577-2.2854a3.0144 3.0144 0 0 1 2.9833 0l3.9577 2.2854v5.8296l-3.9577 2.2854a3.0105 3.0105 0 0 1-1.5616.2158Zm-7.6439-4.5901a3.0144 3.0144 0 0 1 1.4252-2.4657l3.9577-2.2854v4.5708l-3.9577 2.2854-1.4252-2.1051Zm6.1034-7.4839a3.0144 3.0144 0 0 1 2.9093 0l3.9577 2.2854-3.9577 2.2854v4.5708l-3.9577-2.2854V4.3184Zm7.6439 4.5901a3.0144 3.0144 0 0 1-1.4252 2.4657l-3.9577 2.2854V9.0888l3.9577-2.2854 1.4252 2.1051Zm-6.1034 7.4839a3.0144 3.0144 0 0 1-2.9093 0l-3.9577-2.2854 3.9577-2.2854v-4.5708l3.9577 2.2854v4.5708Z"/></svg>
+                <strong>ChatGPT</strong> e a todas as IAs que salvaram meus neurônios (e meus prazos) nessa jornada. Vocês são os melhores estagiários de silício! 🤖✨
+            </div>
+            
+            <img src="joaandfirends.png" alt="João e Amigos">
+
+            <div class="footer">Até lá... 🎓</div>
+        </div>
+    </div>
+
+    <script>
+        function abrirConvite() {
+            const btn = document.getElementById('btnAbrir');
+            btn.style.opacity = '0';
+            setTimeout(() => btn.style.display = 'none', 400);
+
+            const convite = document.getElementById('convite');
+            convite.classList.add('mostrar');
+        }
+    </script>
+
+</body>
+</html>
